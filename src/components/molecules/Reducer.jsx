@@ -1,15 +1,24 @@
 const reducer = (state, action) => {
   switch (action.type) {
-    case 'SIGNIN':
-      localStorage.setItem('token', action.payload.data.token);
-      localStorage.setItem('user', action.payload.data.user.id);
+    case "SIGNIN":
+      localStorage.setItem("token", action.payload.data.token);
+      localStorage.setItem("user", action.payload.data.user.id);
       return {
         ...state,
         isAuthenticated: true,
         token: action.payload.data.token,
         user: action.payload.config.user,
       };
-    case 'LOGOUT':
+    case "SIGNUP":
+      localStorage.setItem("token", action.payload.data.token);
+      
+      return {
+        ...state,
+        isAuthenticated: true,
+        token: action.payload.data.token,
+        user: action.payload.config.user,
+      };
+    case "LOGOUT":
       localStorage.clear();
       return {
         ...state,

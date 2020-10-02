@@ -1,88 +1,108 @@
 @import '../../../sass/config/mixins';
-
-.login-container {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  padding-top: 10%;
-  padding-bottom: 5%;
-  .card {
-    padding: 5% 10px;
-    width: 80%;
-    border: solid rgba(156, 156, 156, 0.473) 0.5px;
-    
-    @include media(tablet) {
-      width: 60%;
+.signup-container {
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 1%;
+    background: url("https://i.pinimg.com/564x/f5/b4/9d/f5b49d73aabe10dccce36daff4cd86b9.jpg") no-repeat center / cover;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    //     background-image: none;
+    //     // background-color: #0f0f0f;
+    // }
+    .photo {
+        display: none;
+        // @include media(desktop) {
+        //     display: block;
+        //     background-image: url("https://i.pinimg.com/564x/f5/b4/9d/f5b49d73aabe10dccce36daff4cd86b9.jpg");
+        //     background-size: 100%;
+        //     background-repeat: no-repeat;
+        //     margin: 0 0 0 5%;
+        //     width: 45%;
+        //     height: 70%;
+        // }
     }
-
-    @include media(desktop) {
-      width: 40%;
+    .card {
+        // background-color: #0f0f0f;
+        padding: 5%;
+        // border: solid rgba(156, 156, 156, 0.473) 0.5px;
+        width: 80%;
+        height: 50vh;
+        @include media(desktop) {
+            width: 50%;
+            height: 100%;
+        }
+        .container {
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            border-radius: 3%;
+            form {
+                display: flex;
+                width: 100%;
+                height: 90%;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-around;
+                align-self: center;
+                h1 {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    text-align: center;
+                    color: rgb(46, 46, 46);
+                    padding-bottom: 1%;
+                }
+                h2 {
+                    font-size: 0.8rem;
+                    color: rgb(46, 46, 46);
+                    padding-bottom: 10%;
+                }
+                label {
+                    width: 80%;
+                    input[type='text'],
+                    input[type='password'] {
+                        width: 100%;
+                        border: none;
+                        outline: none;
+                        border-bottom: 3px solid #C4C4C4;
+                        background-color: #e5e5e5ed;
+                        padding-left: 15px;
+                        padding-right: 1px;
+                        height: 5vh;
+                        font-size: 15px;
+                        &:focus {
+                            background-color: #e5e5e5ed;
+                            transition: background-color 0.5s;
+                            &::placeholder {
+                                color: transparent;
+                                text-transform: uppercase;
+                            }
+                        }
+                    }
+                    ;
+                }
+                button {
+                    width: 50%;
+                    height: 5vh;
+                    font-size: 15px;
+                    background-color: #e5e5e5ed;
+                    border: none;
+                    color: rgb(46, 46, 46);
+                }
+                button:hover {
+                    background-color: #FDBB05;
+                    cursor: pointer;
+                }
+                button:focus {
+                    outline: none !important;
+                }
+                .form-error {
+                    color: #f42b4b;
+                    text-align: center;
+                }
+            }
+        }
     }
-    .container {
-      padding-left: 7%;
-      padding-right: 7%;
-      height: 100%;
-      form {
-        display: flex;
-        height: 80%;
-        flex-direction: column;
-        justify-content: space-around;
-        align-self: center;
-
-        h1 {
-          font-size: 1rem;
-          text-align: center;
-          color: rgb(46, 46, 46);
-          padding-bottom: 2%;
-        }
-        h2 {
-          font-size: 0.8rem;
-          text-align: center;
-          color: rgb(46, 46, 46);
-          padding-bottom: 10%;
-        }
-        label {
-          display: flex;
-          flex-direction: column;
-          input[type='text'],
-          input[type='password'] {
-            padding-left: 1px;
-            padding-right: 1px;
-            height: 40px;
-            border: 0.5px solid rgb(143, 143, 143);
-            font-size: 15px;
-          }
-          input[type='text'] {
-            border-top-left-radius: 5px;
-            border-top-right-radius: 5px;
-          }
-          input[type='password'] {
-            border-bottom-left-radius: 5px;
-            border-bottom-right-radius: 5px;
-          }
-        }
-        button {
-          height: 40px;
-          font-size: 15px;
-          background-color: #f42b4b;
-          border: none;
-          border-radius: 5px;
-          color: rgb(255, 255, 255);
-          margin-top: 5%;
-        }
-        button:hover {
-          background-color: rgb(151, 25, 46);
-          cursor: pointer;
-        }
-        button:focus {
-          outline: none !important;
-        }
-
-        .form-error {
-          color: #f42b4b;
-          text-align: center;
-        }
-      }
-    }
-  }
 }

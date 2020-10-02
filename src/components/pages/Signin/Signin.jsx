@@ -1,11 +1,14 @@
 import React, { useContext } from "react";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../Routes";
 
 require("./_signin.scss");
 
 export const Signin = () => {
-  const { dispatch } = useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext); 
+  const history = useHistory();
+
   const initialState = {
     email: "",
     password: "",
@@ -34,6 +37,7 @@ export const Signin = () => {
       data: JSON.stringify({
         email: data.email,
         password: data.password,
+        errorMessage: data.errorMessage,
       }),
     })
       .then((res) => {
@@ -48,18 +52,20 @@ export const Signin = () => {
           type: "SIGNIN",
           payload: resJson,
         });
+        history.push("./");
       })
       .catch((error) => {
         setData({
           ...data,
           isSubmitting: false,
-          errorMessage: error.message || error.statusText,
+          errorMessage: error.response.data.description,
         });
       });
   };
   console.log(data);
   return (
     <div className="login-container">
+      <div className="photo">PHOTO</div>
       <div className="card">
         <div className="container">
           <form onSubmit={handleFormSubmit}>

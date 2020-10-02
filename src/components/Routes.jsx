@@ -1,12 +1,12 @@
-import React from 'react';
-import { Switch, Route } from 'react-router-dom';
-import Home from './pages/Home/Home';
+import React from "react";
+import { Switch, Route } from "react-router-dom";
+import Home from "./pages/Home/Home";
 
-import Signup from './pages/Signup/Signup';
-import Signin from './pages/Signin/Signin';
+import Signup from "./pages/Signup/Signup";
+import Signin from "./pages/Signin/Signin";
+import Devis from "./pages/Devis/Devis";
 
-
-import reducer from './molecules/Reducer';
+import reducer from "./molecules/Reducer";
 
 export const AuthContext = React.createContext();
 const initialState = {
@@ -14,7 +14,6 @@ const initialState = {
   user: null,
   token: null,
 };
-
 
 export default function Routes() {
   const [state, dispatch] = React.useReducer(reducer, initialState);
@@ -26,21 +25,22 @@ export default function Routes() {
       }}
     >
       <Switch>
+       
         <Route path="/signup">
-          <Signup />
+        < Signup />
         </Route>
 
         <Route path="/signin">
-          <div>{!state.isAuthenticated ? <Signin /> : <Home />}</div>
+          <Signin />
         </Route>
-       
-       
-
-       
-
         <Route path="/">
           <Home />
         </Route>
+        <Route path="/devis">
+          <div>{!state.isAuthenticated ? <Signin /> : <Devis />}</div>
+        </Route>
+
+        
       </Switch>
     </AuthContext.Provider>
   );

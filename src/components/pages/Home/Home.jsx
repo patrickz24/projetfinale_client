@@ -1,13 +1,16 @@
 import React from 'react';
-
-
-require('./_home.scss');
+import { BrowserRouter as Router } from 'react-router-dom';
+import About from "./About";
+import Services from "./Services";
+import Contact from "./Contact";
 
 export default function Home() {
 
   return (
-    <section>
-     <p>yo</p>
-    </section>
+   <Router>
+  < About />
+  < Services />
+  < Contact/>
+   </Router>
   );
 }
