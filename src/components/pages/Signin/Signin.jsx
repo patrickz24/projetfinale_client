@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../../Routes";
+import { AuthContext } from "../../../App";
 
 require("./_signin.scss");
 
@@ -62,7 +62,7 @@ export const Signin = () => {
         });
       });
   };
-  console.log(data);
+  console.log(data, "test");
   return (
     <div className="login-container">
       <div className="photo">PHOTO</div>

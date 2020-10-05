@@ -1,18 +1,27 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
-import {AuthContext} from "../../Routes";
 
+import React, { useContext, useEffect} from "react";
+
+import { Link, useParams } from "react-router-dom";
+import { AuthContext } from "../../../App";
 require("./_navigation.scss");
 
 export const Navigation = () => {
-  // const  {dispatch } = useContext(AuthContext);
+  const {user, id}= useParams();
+  console.log(user);
+  const { state, dispatch } = useContext(AuthContext);
 
-  // function Signout (){
-  //   dispatch({
-  //     type: "LOGOUT",
-  //   });
-  // };
 
+  // const history = useHistory();
+  useEffect(() => {
+    return () => {};
+  }, [state]);
+
+  const logOut = () => {
+    console.log("tutu");
+   dispatch({ type: "LOGOUT" });
+
+    //  history.push("/");
+  };
   return (
     <div>
       <nav className="navigation">
@@ -45,7 +54,7 @@ export const Navigation = () => {
         </div>
         <div className="navigation__logo media_tablet_desktop">
           <Link to="/">
-            <img src="./logo222.svg" alt="logo-kaplan" />
+            <img src= {`${process.env.PUBLIC_URL}/logo222.svg`}  alt="logo-kaplan" />
           </Link>
         </div>
         <div className="navigation__buttons media_tablet_desktop">
@@ -63,10 +72,14 @@ export const Navigation = () => {
             <Link to="/signin">
               <h3>Connexion</h3>
             </Link>
+          </div><div className="navigation__buttons__test">
+            <Link   to={`/profil/${id}`}>
+              <h3>Espace personnelle</h3>
+            </Link>
           </div>
           <div className="navigation__buttons__test">
-            <Link to="/devis">
-              <button >Log Out</button>
+            <Link  onClick={logOut} to="/">
+              <h3>Log Out</h3>
             </Link>
           </div>
         </div>

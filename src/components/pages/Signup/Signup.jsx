@@ -1,7 +1,7 @@
 import React, { useContext} from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../../Routes";
+import { AuthContext } from "../../../App";
 require("./_signup.scss");
 
 export default function Signup() {
@@ -54,6 +54,7 @@ export default function Signup() {
           type: "SIGNUP",
           payload: resJson,
         });
+        console.log('dispatch', dispatch);
         history.push("/");
       })
       .catch((error) => {

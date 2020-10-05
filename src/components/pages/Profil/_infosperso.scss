@@ -1,29 +1,13 @@
 @import '../../../sass/config/mixins';
-.devis-container {
+.infosperso-container {
     height: 100vh;
+    width: 100%;
     justify-content: center;
     display: flex;
     align-items: center;
     padding-top: 5%;
     padding-bottom: 1%;
     background: url("https://i.pinimg.com/564x/f5/b4/9d/f5b49d73aabe10dccce36daff4cd86b9.jpg") no-repeat center / cover;
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    //     background-image: none;
-    //     // background-color: #0f0f0f;
-    // }
-    .photo {
-        display: none;
-        // @include media(desktop) {
-        //     display: block;
-        //     background-image: url("https://i.pinimg.com/564x/f5/b4/9d/f5b49d73aabe10dccce36daff4cd86b9.jpg");
-        //     background-size: 100%;
-        //     background-repeat: no-repeat;
-        //     margin: 0 0 0 5%;
-        //     width: 45%;
-        //     height: 70%;
-        // }
-    }
     .card {
         // background-color: #0f0f0f;
         padding: 5%;
