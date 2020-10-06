@@ -6,12 +6,12 @@
     background-image: url("https://a0.muscache.com/4ea/air/v2/pictures/9d08d356-59b9-4ac4-9f41-5b9c13c2b211.jpg?t=r:w1440-h960-sfit,e:fjpeg-c75");
     background-size: cover;
     background-repeat: no-repeat;
-    @include media(desktop) {
+    @include media(tablet) {
         background: none;
     }
     .photo {
         display: none;
-        @include media(desktop) {
+        @include media(tablet) {
             display: flex;
             // align-items: center;
             // padding-bottom: 45%;
@@ -29,6 +29,11 @@
                 height: 45%;
                 border-bottom: 1px solid rgba(122, 122, 122, 0.507);
             }
+        }
+    }
+    .profile-mobile {
+        @include media(tablet) {
+            display: none;
         }
     }
 }

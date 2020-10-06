@@ -28,20 +28,20 @@ console.log(user);
       <nav className="navigation">
         <div className="navigation__button media_smartphone">
           <Link to="/">
-            <img src="./house.png" alt="homePage" />
+            <img src={`${process.env.PUBLIC_URL}/house.png`} alt="homePage" />
             <h3>Home</h3>
           </Link>
         </div>
         <div className="navigation__button media_smartphone">
           <Link to="/signup">
-            <img src="./option-dinscription.png" alt="inscription" />
+            <img src={`${process.env.PUBLIC_URL}/option-dinscription.png`} alt="inscription" />
             <h3>Inscription</h3>
           </Link>
         </div>
         <div className="navigation__button media_smartphone">
           <Link to="/signin">
             <img
-              src="./symbole-de-connexion-internet-sans-fil.png"
+              src={`${process.env.PUBLIC_URL}/symbole-de-connexion-internet-sans-fil.png`}
               alt="connexion"
             />
             <h3>Connexion</h3>
@@ -49,13 +49,13 @@ console.log(user);
         </div>
         <div className="navigation__button media_smartphone">
           <Link to="/devis">
-            <img src="./report.png" alt="devis" />
+            <img src={`${process.env.PUBLIC_URL}/report.png`} alt="devis" />
             <h3>Devis</h3>
           </Link>
         </div>
         <div className="navigation__button media_smartphone">
           <Link to="/profil">
-            <img src="./profile.svg" alt="profile" />
+            <img src={`${process.env.PUBLIC_URL}/profile.svg`} alt="profile" />
             <h3>Profil</h3>
           </Link>
         </div>
