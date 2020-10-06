@@ -8,33 +8,33 @@ import Devis from "./pages/Devis/Devis";
 import Profil from "./pages/Profil/Profil";
 
 
-
-
 export default function Routes() {
-  
   return (
-   
-      <Switch>
-        <Route path="/signup">
-          <Signup />
-        </Route>
+    <Switch>
+      <Route path="/signup">
+        <Signup />
+      </Route>
 
-        <Route path="/signin">
-          <Signin />
-        </Route>
-        <Route path="/devis">
-          <Devis />
-        </Route>
+      <Route path="/signin">
+        <Signin />
+      </Route>
+      <Route path="/devis">
+        <Devis />
+      </Route>
 
-        <Route path="/profil/:id">
-          <Profil />
+      <Route  path="/profil">
+        <Profil />
+      </Route>
+      {/* <Route  exact path="/profil/:id/chat">
+          <Chat />
         </Route>
-       
-        
-        <Route path="/">
-          <Home />
-        </Route>
-      </Switch>
-   
+        <Route exact path="/profil/:id/infosperso">
+          <Infosperso />
+        </Route> */}
+
+      <Route exact path="/">
+        <Home />
+      </Route>
+    </Switch>
   );
 }

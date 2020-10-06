@@ -11,7 +11,7 @@ const reducer = (state, action) => {
         ...state,
         isAuthenticated: true,
         token: action.payload.data.token,
-        user: action.payload.config.user,
+        user: action.payload.data.user,
       };
 
     case "LOGOUT":

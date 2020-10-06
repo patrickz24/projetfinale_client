@@ -1,13 +1,12 @@
-import React, { useContext} from "react";
+import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import { AuthContext } from "../../../App";
+
 require("./_signup.scss");
 
 export default function Signup() {
   const history = useHistory();
-  
-  const { dispatch } = useContext(AuthContext);
+
   const initialState = {
     first_name: "",
     last_name: "",
@@ -45,18 +44,12 @@ export default function Signup() {
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
+          history.push("/");
           return res;
         }
         throw res;
       })
-      .then((resJson) => {
-        dispatch({
-          type: "SIGNUP",
-          payload: resJson,
-        });
-        console.log('dispatch', dispatch);
-        history.push("/");
-      })
+   
       .catch((error) => {
         setData({
           ...data,
@@ -66,9 +59,6 @@ export default function Signup() {
       });
   };
   console.log(data);
-
-
-  
 
   return (
     <div className="signup-container">
@@ -122,13 +112,14 @@ export default function Signup() {
               />
             </label>
             {data.errorMessage && (
-              <span className="form-error">{data.errorMessage.data.description}</span>
+              <span className="form-error">
+                {data.errorMessage.data.description}
+              </span>
             )}
 
             <button disabled={data.isSubmitting}>
               {data.isSubmitting ? "Loading..." : "Continuer"}
             </button>
-         
           </form>
         </div>
       </div>

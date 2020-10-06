@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link, Switch, Route} from "react-router-dom";
+import { Link, Switch, Route, useRouteMatch} from "react-router-dom";
 
 import Infosperso from "./Infosperso";
 
@@ -10,25 +10,28 @@ require("./_profil.scss");
 
 
 export default function Profil() {
-
+let {path, url} = useRouteMatch();
   return (
     <div className="profil-container">
       <div className="photo">
           <div classsName="Link">
           <div><Link>e-learning</Link></div> 
-          <div><Link to={`./chat`}>chat</Link></div> 
+          <div><Link to={`${url}/chat`}>chat</Link></div> 
           <div><Link>Paramètres</Link></div> 
-          <div><Link  to={`./infosperso`}>informations Personnelles</Link></div> </div>
+          <div><Link  to={`${url}/infosperso`}>informations Personnelles</Link></div> </div>
 
       </div>
       <Switch>
-      <Route exact path="/profil/:id/chat">
-          <Chat />
+        <Route exact path={`${url}/chat`}>
+         <Chat/>
         </Route>
-        <Route exact path="/profil/:id/infosperso">
-          <Infosperso />
+        <Route exact path={`${url}/infosperso`}>
+         <Infosperso/>
         </Route>
-        </Switch>
+        <Route path={`${path}/profil`}>
+          <Profil />
+        </Route>
+      </Switch>
       </div>
 
        

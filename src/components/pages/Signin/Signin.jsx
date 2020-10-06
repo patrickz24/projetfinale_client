@@ -58,7 +58,7 @@ export const Signin = () => {
         setData({
           ...data,
           isSubmitting: false,
-          errorMessage: error.response.data.description,
+          errorMessage: error.response.data.description && error.response.data.title,
         });
       });
   };

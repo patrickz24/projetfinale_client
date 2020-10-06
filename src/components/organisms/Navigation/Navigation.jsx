@@ -1,13 +1,12 @@
 
 import React, { useContext, useEffect} from "react";
 
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { AuthContext } from "../../../App";
 require("./_navigation.scss");
 
 export const Navigation = () => {
-  const {user, id}= useParams();
-  console.log(user);
+
   const { state, dispatch } = useContext(AuthContext);
 
 
@@ -15,12 +14,14 @@ export const Navigation = () => {
   useEffect(() => {
     return () => {};
   }, [state]);
-
+  const user= state.user;
+// const {id} = user.id;
+console.log(user);
   const logOut = () => {
     console.log("tutu");
    dispatch({ type: "LOGOUT" });
 
-    //  history.push("/");
+    console.log('Vous etes déconnecté!')
   };
   return (
     <div>
@@ -52,6 +53,12 @@ export const Navigation = () => {
             <h3>Devis</h3>
           </Link>
         </div>
+        <div className="navigation__button media_smartphone">
+          <Link to="/profil">
+            <img src="./profile.svg" alt="profile" />
+            <h3>Profil</h3>
+          </Link>
+        </div>
         <div className="navigation__logo media_tablet_desktop">
           <Link to="/">
             <img src= {`${process.env.PUBLIC_URL}/logo222.svg`}  alt="logo-kaplan" />
@@ -73,8 +80,8 @@ export const Navigation = () => {
               <h3>Connexion</h3>
             </Link>
           </div><div className="navigation__buttons__test">
-            <Link   to={`/profil/${id}`}>
-              <h3>Espace personnelle</h3>
+            <Link to ="/profil">
+              <h3>Profil</h3>
             </Link>
           </div>
           <div className="navigation__buttons__test">

@@ -1,12 +1,12 @@
 import React from "react";
 import axios from "axios";
-import { useHistory, useParams} from "react-router-dom";   
+import { useParams} from "react-router-dom";   
 // import { AuthContext } from "../../Routes";
 
 require("./_infosperso.scss");
 
 export default function Infosperso() {  
-    const history = useHistory();
+    // const history = useHistory();
     const {id}= useParams();
     // const { dispatch } = useContext(AuthContext);
     const initialState = {
@@ -48,7 +48,7 @@ export default function Infosperso() {
           if (res.status === 200) {
             return res;
           }
-          history.push("/");
+          // history.push("/");
           throw res; 
         })
          
