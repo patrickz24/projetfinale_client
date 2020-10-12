@@ -1,0 +1,50 @@
+@import './../../../../../sass/config/mixins';
+.about-container {
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    padding-bottom: 1%;
+    // background-image: url("https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_960_720.jpg");
+    // background-size: cover;
+    // background-repeat: no-repeat;
+    @include media(desktop) {
+        background: none;
+    }
+    .photo {
+        display: none;
+        @include media(desktop) {
+            // display: block;
+            // background-image: url("https://cdn.pixabay.com/photo/2018/05/08/08/44/artificial-intelligence-3382507_960_720.jpg");
+            // background-size: cover;
+            // background-repeat: no-repeat;
+            // width: 50%;
+            // height: 60vh;
+        }
+    }
+    .card {
+        background-color: #ffffff;
+        padding: 5%;
+        // border: solid rgba(156, 156, 156, 0.473) 0.5px;
+        width: 80%;
+        height: 80vh;
+        @include media(desktop) {
+            width: 50%;
+            // height: 92vh;
+        }
+        .container {
+            // padding-left: 7%;
+            // padding-right: 7%;
+            height: 100%;
+            width: 100%;
+            h3 {
+                font-weight: 400;
+                font-size: 14px;
+                // text-align: center;
+                @include media(desktop) {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

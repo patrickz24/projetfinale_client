@@ -2,10 +2,10 @@
 import React, { useContext, useEffect} from "react";
 
 import { Link} from "react-router-dom";
-import { AuthContext } from "../../../App";
-require("./_navigation.scss");
+import { AuthContext } from "../../../../App";
+require("../_navigation.scss");
 
-export const Navigation = () => {
+export const NavConnect = () => {
 
   const { state, dispatch } = useContext(AuthContext);
 
@@ -14,9 +14,7 @@ export const Navigation = () => {
   useEffect(() => {
     return () => {};
   }, [state]);
-  const user= state.user;
-// const {id} = user.id;
-console.log(user);
+ 
   const logOut = () => {
     console.log("tutu");
    dispatch({ type: "LOGOUT" });
@@ -32,21 +30,7 @@ console.log(user);
             <h3>Home</h3>
           </Link>
         </div>
-        <div className="navigation__button media_smartphone">
-          <Link to="/signup">
-            <img src={`${process.env.PUBLIC_URL}/option-dinscription.png`} alt="inscription" />
-            <h3>Inscription</h3>
-          </Link>
-        </div>
-        <div className="navigation__button media_smartphone">
-          <Link to="/signin">
-            <img
-              src={`${process.env.PUBLIC_URL}/symbole-de-connexion-internet-sans-fil.png`}
-              alt="connexion"
-            />
-            <h3>Connexion</h3>
-          </Link>
-        </div>
+       
         <div className="navigation__button media_smartphone">
           <Link to="/devis">
             <img src={`${process.env.PUBLIC_URL}/report.png`} alt="devis" />
@@ -57,6 +41,12 @@ console.log(user);
           <Link to="/profil">
             <img src={`${process.env.PUBLIC_URL}/profile.svg`} alt="profile" />
             <h3>Profil</h3>
+          </Link>
+        </div>
+        <div className="navigation__button media_smartphone">
+          <Link onClick={logOut} to="/">
+            <img src={`${process.env.PUBLIC_URL}/logout.svg`} alt="deconnexion" />
+            <h3>Déconnexion</h3>
           </Link>
         </div>
         <div className="navigation__logo media_tablet_desktop">
@@ -70,20 +60,12 @@ console.log(user);
               <h3>Devis</h3>
             </Link>
           </div>
+     
           <div className="navigation__buttons__test">
-            <Link to="/signup">
-              <h3>Inscription</h3>
-            </Link>
-          </div>
-          <div className="navigation__buttons__test">
-            <Link to="/signin">
-              <h3>Connexion</h3>
-            </Link>
-          </div><div className="navigation__buttons__test">
             <Link to ="/profil">
               <h3>Profil</h3>
             </Link>
-          </div>
+          </div>  
           <div className="navigation__buttons__test">
             <Link  onClick={logOut} to="/">
               <h3>Log Out</h3>
@@ -94,4 +76,4 @@ console.log(user);
     </div>
   );
 };
-export default Navigation;
+export default NavConnect;

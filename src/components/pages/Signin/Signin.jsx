@@ -58,7 +58,7 @@ export const Signin = () => {
         setData({
           ...data,
           isSubmitting: false,
-          errorMessage: error.response.data.description && error.response.data.title,
+          errorMessage: error.response,
         });
       });
   };
@@ -94,7 +94,7 @@ export const Signin = () => {
             </label>
 
             {data.errorMessage && (
-              <span className="form-error">{data.errorMessage}</span>
+              <span className="form-error">{data.errorMessage.data.description}</span>
             )}
 
             <button disabled={data.isSubmitting}>

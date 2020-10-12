@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
-import { useParams} from "react-router-dom";   
-// import { AuthContext } from "../../Routes";
+import { useContext } from "react";
+import { useHistory} from "react-router-dom";   
+import {AuthContext} from "../../../../App";
+
 
 require("./_infosperso.scss");
 
 export default function Infosperso() {  
-    // const history = useHistory();
-    const {id}= useParams();
-    // const { dispatch } = useContext(AuthContext);
+    const history = useHistory();
+    const {state}= useContext(AuthContext);
+    const id= state.user.id;
+   const token = localStorage.getItem("token");
+  
+   console.log(token, id);
+   useEffect(() => {
+    return () => {};
+  }, [state]);
+  console.log(state);
+
     const initialState = {
       first_name: "",
       last_name: "",
@@ -46,12 +56,13 @@ export default function Infosperso() {
         .then((res) => {
           console.log(res);
           if (res.status === 200) {
+            // setData(initialState);
+            history.push("/profil");
             return res;
           }
-          // history.push("/");
+    
           throw res; 
         })
-         
         
         .catch((error) => {
           setData({
@@ -60,6 +71,7 @@ export default function Infosperso() {
             errorMessage: error.response,
           });
         });
+        
     };
     console.log(data);
   
@@ -81,7 +93,7 @@ export default function Infosperso() {
                   onChange={handleInputChange}
                   name="first_name"
                   id="first_name"
-                  placeholder={data.first_name}
+                  placeholder={state.user.first_name}
                 />
               </label>
   
@@ -92,7 +104,7 @@ export default function Infosperso() {
                   onChange={handleInputChange}
                   name="last_name"
                   id="last_name"
-                  placeholder={data.last_name}
+                  placeholder={state.user.last_name}
                 />
               </label>
   
@@ -103,7 +115,7 @@ export default function Infosperso() {
                   onChange={handleInputChange}
                   name="email"
                   id="email"
-                  placeholder={data.email}
+                  placeholder={state.user.email}
                 />
               </label>
   
@@ -120,9 +132,9 @@ export default function Infosperso() {
               {data.errorMessage && (
                 <span className="form-error">{data.errorMessage.data.description}</span>
               )}
-  
+
               <button disabled={data.isSubmitting}>
-                {data.isSubmitting ? "Loading..." : "Continuer"}
+                {data.isSubmitting ? "Envoyé" : "Continuer"}
               </button>
            
             </form>

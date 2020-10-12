@@ -1,13 +1,13 @@
-import React from 'react';
-import Navigation from '../Navigation/Navigation';
+import React from "react";
+import SwitchNav from "./SwitchNav";
 
-require('./_header.scss');
+require("./_header.scss");
 
 export default function Header() {
   return (
     <>
       <header>
-        <Navigation />
+        <SwitchNav />
       </header>
     </>
   );

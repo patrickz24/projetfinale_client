@@ -1,0 +1,70 @@
+    @import './../../../../../sass/config/mixins';
+    .services-container {
+        height: 100vh;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        padding-top: 5%;
+        padding-bottom: 1%;
+        background-image: url("https://cdn.pixabay.com/photo/2014/09/19/19/09/peasant-452904_960_720.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        @include media(desktop) {
+            background: none;
+        }
+        .photo {
+            display: none;
+            @include media(desktop) {
+                display: block;
+                background-image: url("https://cdn.pixabay.com/photo/2014/09/19/19/09/peasant-452904_960_720.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                width: 50%;
+                height: 60vh;
+            }
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 5%;
+            border: solid rgba(156, 156, 156, 0.473) 0.5px;
+            width: 80%;
+            height: 60vh;
+            @include media(desktop) {
+                width: 50%;
+                // height: 92vh;
+            }
+            .container {
+                // padding-left: 7%;
+                // padding-right: 7%;
+                height: 100%;
+                width: 100%;
+                h3 {
+                    font-weight: 600;
+                    font-size: 11px;
+                    text-align: center;
+                    @include media(desktop) {
+                        font-size: 20px;
+                    }
+                }
+                button {
+                    width: 50%;
+                    height: 5vh;
+                    font-size: 15px;
+                    background-color: rgb(143, 143, 143);
+                    border: none;
+                    color: rgb(46, 46, 46);
+                }
+                button:hover {
+                    background-color: #e5e5e5ed;
+                    cursor: pointer;
+                }
+                button:focus {
+                    outline: none !important;
+                }
+                .form-error {
+                    color: #f42b4b;
+                    text-align: center;
+                }
+            }
+        }
+    }

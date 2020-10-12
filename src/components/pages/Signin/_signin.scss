@@ -6,23 +6,9 @@
     align-items: center;
     padding-top: 5%;
     padding-bottom: 1%;
-    background: url("https://i.pinimg.com/564x/f5/b4/9d/f5b49d73aabe10dccce36daff4cd86b9.jpg")no-repeat center / cover;
-    // background-size: cover;
-    // background-repeat: no-repeat;
-    //     background-image: none;
-    //     // background-color: #0f0f0f;
-    // }
+    background: url("https://cdn.pixabay.com/photo/2015/11/07/11/26/forest-floor-1031143_960_720.jpg")no-repeat center / cover;
     .photo {
         display: none;
-        // @include media(desktop) {
-        //     display: block;
-        //     background-image: url("https://i.pinimg.com/564x/f5/b4/9d/f5b49d73aabe10dccce36daff4cd86b9.jpg");
-        //     background-size: 100%;
-        //     background-repeat: no-repeat;
-        //     margin: 0 0 0 5%;
-        //     width: 45%;
-        //     height: 70%;
-        // }
     }
     .card {
         // background-color: #0f0f0f;
