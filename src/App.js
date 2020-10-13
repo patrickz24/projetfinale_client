@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./sass/base.scss";
+
 import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/organisms/Header/Header";
 import Routes from "./components/Routes";
@@ -8,7 +9,7 @@ import Footer from "./components/organisms/Footer/Footer";
 
 import reducer from "./components/molecules/Reducer";
 import Axios from "axios";
-
+require("./sass/config/_variable.scss");
 export const AuthContext = React.createContext({
   state: null,
   dispatch: () => {},

@@ -10,7 +10,7 @@ require("./_infosperso.scss");
 export default function Infosperso() {  
     const history = useHistory();
     const {state}= useContext(AuthContext);
-    const id= state.user.id;
+    const id= localStorage.getItem("user");
    const token = localStorage.getItem("token");
   
    console.log(token, id);
@@ -84,7 +84,7 @@ export default function Infosperso() {
         <div className="card">
           <div className="container">
             <form onSubmit={handleFormSubmit}>
-              <h1>Informations Personnelles</h1>
+              <h1>Informations</h1>
   
               <label htmlFor="first_name">
                 <input

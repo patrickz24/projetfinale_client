@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <footer>
       {" "}
-      <p>© 2020 Kaplan Prod, Inc. All rights reserved</p>
+      <p>© 2020 Kaval Prod, Inc. All rights reserved</p>
     </footer>
   );
 };

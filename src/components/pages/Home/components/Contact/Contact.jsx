@@ -6,9 +6,10 @@ require('./_contact.scss');
 export default function Contact() { const history = useHistory();
 
   const [inputs, setInputs] = useState({
-    domaine: "",
-    city: "",
-    description: "",
+    subject: "",
+    text:"",
+     
+    
   });
 
   const handleInputChange = (event) => {
@@ -16,23 +17,25 @@ export default function Contact() { const history = useHistory();
     setInputs((inputs) => ({
       ...inputs,
       [event.target.name]: event.target.value,
-    }));
+    })); 
   };
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const token = localStorage.getItem("token");
+  
     await axios({
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        authorization: `Bearer ${token}`,
+       
       },
-      url: "http://localhost:8060/api/devis",
+      url: "http://localhost:8060/api/contact",
       data: inputs,
+      
     });
     history.push("/");
   };
+  
   return (
     <div className="contact-container">
       <div className="photo">PHOTO</div>
@@ -41,44 +44,33 @@ export default function Contact() { const history = useHistory();
     <form onSubmit={handleFormSubmit}>
             <h1>Contactez-nous</h1>
 
-            <label htmlFor="domaine">
+            <label htmlFor="subject">
               <input
                 type="text"
-                value={inputs.domaine}
+                value={inputs.subject}
                 onChange={handleInputChange}
-                name="domaine"
-                id="domaine"
-                placeholder="NAME"
+                name="subject"
+                id="subject"
+                placeholder="SUJET"
               />
             </label>
 
-            <label htmlFor="city">
-              <input
-                type="text"
-                value={inputs.last_name}
-                onChange={handleInputChange}
-                name="city"
-                id="city"
-                placeholder="EMAIL"
-              />
-            </label>
+        
 
-            <label htmlFor="description">
+            <label htmlFor="text">
               <input
                 type="text"
-                value={inputs.email}
+                value={inputs.text}
                 onChange={handleInputChange}
-                name="description"
-                id="description"
+                name="text"
+                id="text"
                 placeholder="Message"
               />
             </label>
 
             <button
               type="submit"
-              // onClick={() => {
-              //   history.push(`./`);
-              // }}
+         
             >
               Continuer
             </button>
