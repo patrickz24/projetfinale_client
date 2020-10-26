@@ -11,7 +11,7 @@ import reducer from "./components/molecules/Reducer";
 import Axios from "axios";
 require("./sass/config/_variable.scss");
 export const AuthContext = React.createContext({
-  state: null,
+  state: "",
   dispatch: () => {},
 });
 const initialState = {

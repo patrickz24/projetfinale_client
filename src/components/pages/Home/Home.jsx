@@ -8,9 +8,10 @@ export default function Home() {
 
   return (
    <Router>
-   
+    
+    < Services />
   < About />
-  < Services />
+ 
   < Contact/>
    </Router>
   );

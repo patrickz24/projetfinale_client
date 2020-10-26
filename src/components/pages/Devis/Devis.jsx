@@ -8,7 +8,7 @@ export default function Devis() {
   const history = useHistory();
 
   const [inputs, setInputs] = useState({
-    domaine: "",
+    field: "",
     city: "",
     description: "",
   });
@@ -43,13 +43,13 @@ export default function Devis() {
           <form onSubmit={handleFormSubmit}>
             <h1>Devis</h1>
 
-            <label htmlFor="domaine">
+            <label htmlFor="field">
               <input
                 type="text"
-                value={inputs.domaine}
+                value={inputs.field}
                 onChange={handleInputChange}
-                name="domaine"
-                id="domaine"
+                name="field"
+                id="field"
                 placeholder="Domaine"
               />
             </label>
@@ -57,7 +57,7 @@ export default function Devis() {
             <label htmlFor="city">
               <input
                 type="text"
-                value={inputs.last_name}
+                value={inputs.city}
                 onChange={handleInputChange}
                 name="city"
                 id="city"
@@ -68,7 +68,7 @@ export default function Devis() {
             <label htmlFor="description">
               <input
                 type="text"
-                value={inputs.email}
+                value={inputs.description}
                 onChange={handleInputChange}
                 name="description"
                 id="description"

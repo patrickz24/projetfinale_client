@@ -1,62 +1,65 @@
-@import './../../../../../sass/config/mixins';
-.services-container {
-    height: 110%;
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.4);
-    background-image: url("https://cdn.pixabay.com/photo/2014/09/19/19/09/peasant-452904_960_720.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    @include media(desktop) {
-        height: 70vh;
-    }
-    .card {
-        background-color: rgba(0, 0, 0, 0.4);
-        width: 100%;
-        height: 100%;
-        // @include media(desktop) {
-        //     width: 50%;
-        // }
-        .container {
-            padding: 5%;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-            width: 100%;
-            h1 {
-                text-align: center;
-                font-size: 1.5rem;
-                text-align: justify;
-                color: #FAFAFA;
-                padding-bottom: 1%;
-            }
-            h3 {
-                margin: auto;
-                font-weight: 600;
-                font-size: 14px;
-                color: #FAFAFA;
-                text-align: justify;
-                padding-bottom: 6%;
-                @include media(desktop) {
-                    font-size: 20px;
-                }
-            }
-            button {
-                width: 20%;
-                height: 5vh;
-                font-size: 15px;
-                background-color: rgb(143, 143, 143);
-                border: none;
-                color: #FAFAFA;
-            }
-            button:hover {
-                background-color: #FDBB05;
-                cursor: pointer;
-            }
-            button:focus {
-                outline: none !important;
-            }
-        }
-    }
-}
+     @import './../../../../../sass/config/mixins';
+     .services-container {
+         height: 110%;
+         display: flex;
+         background-color: rgba(0, 0, 0, 0.4);
+         background-image: url("https://cdn.pixabay.com/photo/2014/09/19/19/09/peasant-452904_960_720.jpg");
+         background-size: cover;
+         background-repeat: no-repeat;
+         @include media(desktop) {
+             height: 70vh;
+         }
+         .card {
+             background-color: rgba(0, 0, 0, 0.4);
+             width: 100%;
+             height: 100%;
+             // @include media(desktop) {
+             //     width: 50%;
+             // }
+             .container {
+                 padding: 5%;
+                 display: flex;
+                 justify-content: center;
+                 flex-direction: column;
+                 align-items: center;
+                 height: 100%;
+                 width: 100%;
+                 h1 {
+                     text-align: center;
+                     font-size: 1.5rem;
+                     text-align: justify;
+                     color: #FAFAFA;
+                     text-shadow: 0 0 10px black;
+                     padding-bottom: 1%;
+                 }
+                 h3 {
+                     margin: auto;
+                     font-weight: 600;
+                     font-size: 14px;
+                     color: #FAFAFA;
+                     text-shadow: 0 0 10px black;
+                     padding-bottom: 6%;
+                     @include media(desktop) {
+                         font-size: 20px;
+                     }
+                 }
+                 Link {
+                     h3 {
+                         width: 20%;
+                         height: 5vh;
+                         font-size: 15px;
+                         background-color: rgb(143, 143, 143);
+                         border: none;
+                         color: #FAFAFA;
+                     }
+                     h3:hover {
+                         background-color: #FDBB05;
+                         cursor: pointer;
+                     }
+                     h3:focus {
+                         outline: none !important;
+                     }
+                 }
+             }
+         }
+     }

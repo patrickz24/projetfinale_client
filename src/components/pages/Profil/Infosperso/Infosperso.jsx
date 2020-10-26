@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import axios from "axios";
 import { useContext } from "react";
 import { useHistory} from "react-router-dom";   
@@ -9,15 +9,13 @@ require("./_infosperso.scss");
 
 export default function Infosperso() {  
     const history = useHistory();
-    const {state}= useContext(AuthContext);
-    const id= localStorage.getItem("user");
-   const token = localStorage.getItem("token");
+ 
+    const id = localStorage.getItem("user");
+
   
-   console.log(token, id);
-   useEffect(() => {
-    return () => {};
-  }, [state]);
-  console.log(state);
+   const {state}= useContext(AuthContext);
+
+
 
     const initialState = {
       first_name: "",
@@ -28,39 +26,40 @@ export default function Infosperso() {
       errorMessage: null,
     };
     const [data, setData] = React.useState(initialState);
+
+console.log(state);
     const handleInputChange = (event) => {
       setData({
         ...data,
         [event.target.name]: event.target.value,
       });
     };
+ 
+
     const handleFormSubmit = (event) => {
       event.preventDefault();
       setData({
         ...data,
         isSubmitting: true,
         errorMessage: null,
+  
       });
       axios({
-        method: "patch",
+        method: "put",
         headers: { "Content-Type": "application/json" },
         url: `http://localhost:8060/api/user/${id}`,
-        data: JSON.stringify({
-          first_name: data.first_name,
-          last_name: data.last_name,
-          email: data.email,
-          password: data.password,
-          errorMessage: data.errorMessage,
-        }),
+        data: data,
       })
         .then((res) => {
           console.log(res);
           if (res.status === 200) {
-            // setData(initialState);
-            history.push("/profil");
+      
+            history.push("/profil/infosperso");
+           
             return res;
+           
           }
-    
+        
           throw res; 
         })
         
@@ -84,8 +83,9 @@ export default function Infosperso() {
         <div className="card">
           <div className="container">
             <form onSubmit={handleFormSubmit}>
-              <h1>Informations</h1>
-  
+              <h3>Informations personnelles</h3>
+             {/* <h3>Si vous voulez modifier vos informtions personnelles</h3>
+   */}
               <label htmlFor="first_name">
                 <input
                   type="text"
@@ -93,7 +93,7 @@ export default function Infosperso() {
                   onChange={handleInputChange}
                   name="first_name"
                   id="first_name"
-                  placeholder={state.user.first_name}
+                  placeholder='Prénom'
                 />
               </label>
   
@@ -104,7 +104,7 @@ export default function Infosperso() {
                   onChange={handleInputChange}
                   name="last_name"
                   id="last_name"
-                  placeholder={state.user.last_name}
+                  placeholder='Nom'
                 />
               </label>
   
@@ -115,7 +115,7 @@ export default function Infosperso() {
                   onChange={handleInputChange}
                   name="email"
                   id="email"
-                  placeholder={state.user.email}
+                  placeholder='email'
                 />
               </label>
   
@@ -132,9 +132,11 @@ export default function Infosperso() {
               {data.errorMessage && (
                 <span className="form-error">{data.errorMessage.data.description}</span>
               )}
-
+{data.isSubmitting && (
+                <span className="form-validation">Modification de vos informations personnelles a bien été effectuée</span>
+              )}
               <button disabled={data.isSubmitting}>
-                {data.isSubmitting ? "Envoyé" : "Continuer"}
+                {data.isSubmitting ? "Envoyé" : "Modifier"}
               </button>
            
             </form>

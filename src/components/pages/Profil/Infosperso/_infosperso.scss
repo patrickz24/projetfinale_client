@@ -7,7 +7,7 @@
     align-items: center;
     padding-top: 5%;
     padding-bottom: 1%;
-    background: url("https://i.pinimg.com/564x/f5/b4/9d/f5b49d73aabe10dccce36daff4cd86b9.jpg") no-repeat center / cover;
+    background: url("https://cdn.pixabay.com/photo/2016/11/21/14/57/agriculture-1845835_960_720.jpg") no-repeat center / cover;
     .card {
         padding: 5%;
         width: 80%;
@@ -81,6 +81,10 @@
                 }
                 .form-error {
                     color: #f42b4b;
+                    text-align: center;
+                }
+                .form-validation {
+                    color: green;
                     text-align: center;
                 }
             }

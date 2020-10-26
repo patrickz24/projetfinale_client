@@ -16,7 +16,7 @@ export const NavConnect = () => {
   }, [state]);
  
   const logOut = () => {
-    console.log("tutu");
+
    dispatch({ type: "LOGOUT" });
 
     console.log('Vous etes déconnecté!')

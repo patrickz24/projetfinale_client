@@ -1,40 +1,37 @@
-@import '../../../sass/config/mixins';
-.profil-container {
-    justify-content: flex-start;
-    display: flex;
-    align-items: center;
-    background-image: url("https://a0.muscache.com/4ea/air/v2/pictures/9d08d356-59b9-4ac4-9f41-5b9c13c2b211.jpg?t=r:w1440-h960-sfit,e:fjpeg-c75");
-    background-size: cover;
-    background-repeat: no-repeat;
-    @include media(tablet) {
-        background: none;
-    }
-    .photo {
-        display: none;
+    @import '../../../sass/config/mixins';
+    .profil-container {
+        justify-content: flex-start;
+        display: flex;
+        align-items: center;
+        background-image: url("https://a0.muscache.com/4ea/air/v2/pictures/9d08d356-59b9-4ac4-9f41-5b9c13c2b211.jpg?t=r:w1440-h960-sfit,e:fjpeg-c75");
+        background-size: cover;
+        background-repeat: no-repeat;
         @include media(tablet) {
-            display: flex;
-            // align-items: center;
-            // padding-bottom: 45%;
-            background-color: #FAFAFA;
-            // border-top: 1px solid rgba(122, 122, 122, 0.507);
-            width: 20%;
-            padding-top: 10vh;
-            height: 90vh;
-            div {
+            background: none;
+        }
+        .photo {
+            display: none;
+            @include media(tablet) {
                 display: flex;
-                align-items: center;
-                justify-content: space-around;
-                flex-direction: column;
-                width: 100%;
-                height: 45%;
-                border-bottom: 1px solid rgba(122, 122, 122, 0.507);
+                background-color: #FAFAFA;
+                width: 20%;
+                padding-top: 10vh;
+                height: 90vh;
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-around;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 45%;
+                    border-bottom: 1px solid rgba(122, 122, 122, 0.507);
+                }
+            }
+        }
+        .profile-mobile {
+            height: 100vh;
+            @include media(tablet) {
+                display: none;
             }
         }
     }
-    .profile-mobile {
-        height: 100vh;
-        @include media(tablet) {
-            display: none;
-        }
-    }
-}

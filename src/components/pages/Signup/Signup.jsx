@@ -44,7 +44,7 @@ export default function Signup() {
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
-          history.push("/");
+          history.push("/signin");
           return res;
         }
         throw res;
