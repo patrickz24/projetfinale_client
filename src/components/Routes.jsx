@@ -21,22 +21,11 @@ useEffect(() => {
       <Route path="/signup">
         <Signup />
       </Route>
-
       <Route path="/signin">
         <Signin />
       </Route>
-      {/* <Route path="/devis">
-  <div>{!state.isAuthenticated ? < Signin/> : <Devis />}</div>
-      </Route> */}
 <PrivateRoute  path="/devis" component={Devis}/>
-      {/* <Route  path="/profil"> */}
-      {/* <div>{!state.isAuthenticated ? < Signin/> : <Profil />}</div>
-      </Route> */}
       <PrivateRoute path="/profil"  component={Profil}/>
-     
-      
- 
-
       <Route exact path="/">
         <Home />
       </Route>

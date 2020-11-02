@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/organisms/Header/Header";
 import Routes from "./components/Routes";
 import Footer from "./components/organisms/Footer/Footer";
-// import Home from "./components/pages/Home/Home";
+
 
 import reducer from "./components/molecules/Reducer";
 import Axios from "axios";

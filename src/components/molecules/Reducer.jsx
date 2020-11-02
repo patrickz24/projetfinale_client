@@ -6,10 +6,6 @@ const reducer = (state, action) => {
       localStorage.setItem("token", action.payload.data.token);
       localStorage.setItem("user", action.payload.data.user.id);
     
-
-
-  
-     
          return {
         ...state,
         isAuthenticated: true,

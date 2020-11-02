@@ -14,7 +14,7 @@ return(
     state.isAuthenticated ? (<Component {...props}/>):(<Redirect
     to={{
         pathname: "./signin",
-        state: {from:props.location}
+        state:  'Please sign in' 
     }}
     />
     )}/>
