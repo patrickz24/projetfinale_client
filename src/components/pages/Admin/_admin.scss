@@ -1,0 +1,69 @@
+@import '../../../sass/config/mixins';
+.admin {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding-top: 20%;
+    margin-left: 10%;
+    // padding: 0;
+    // padding-bottom: 20%; 
+    @include media(tablet) {
+        padding-bottom: 0;
+    }
+    @include media(desktop) {
+        padding-top: 7%;
+        width: 50%;
+        height: 100%;
+        // padding-bottom: -10%;
+    }
+    &-mondevis {
+        background: #FAFAFA;
+        opacity: 0.9;
+        border: solid grey;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        padding: 4%;
+        margin-bottom: 10%;
+        text-align: center;
+        h2 {
+            font-size: 1em;
+            font-weight: 600;
+            width: 60%;
+            margin: 0 auto;
+        }
+        h3 {
+            padding: 0% 0% 0% 5%;
+            font-size: 0.8em;
+            font-weight: 600;
+            width: 50%;
+            margin: 0 auto;
+        }
+        hr {
+            border: 0.5px solid rgba(184, 184, 184, 0.329);
+            width: 50%;
+            margin: 0 auto;
+        }
+        p {
+            padding: 0% 0% 0% 5%;
+            width: 90%;
+            margin: 0 auto;
+            font-size: 0.9em;
+        }
+        button {
+            width: 50%;
+            height: 5vh;
+            font-size: 15px;
+            background-color: #e5e5e5ed;
+            border: none;
+            color: rgb(46, 46, 46);
+        }
+        button:hover {
+            background-color: #FDBB05;
+            cursor: pointer;
+        }
+        button:focus {
+            outline: none !important;
+        }
+    }
+}

@@ -42,6 +42,12 @@ export const NavConnect = () => {
             <img src={`${process.env.PUBLIC_URL}/profile.svg`} alt="profile" />
             <h3>Profil</h3>
           </Link>
+        </div> 
+        <div className="navigation__button media_smartphone">
+          <Link to="/admin">
+            <img src={`${process.env.PUBLIC_URL}/profile.svg`} alt="profile" />
+            <h3>Admin</h3>
+          </Link>
         </div>
         <div className="navigation__button media_smartphone">
           <Link onClick={logOut} to="/">
@@ -65,7 +71,12 @@ export const NavConnect = () => {
             <Link to ="/profil">
               <h3>Profil</h3>
             </Link>
-          </div>  
+          </div> 
+          <div className="navigation__buttons__test">
+            <Link to ="/admin">
+              <h3>Admin</h3>
+            </Link>
+          </div>   
           <div className="navigation__buttons__test">
             <Link  onClick={logOut} to="/">
               <h3>Log Out</h3>

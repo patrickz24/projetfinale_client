@@ -50,8 +50,8 @@ export default function App() {
       }}
     >
       <Router>
+         <Routes />
         <Header />
-        <Routes />
         <Footer />
       </Router>
     </AuthContext.Provider>

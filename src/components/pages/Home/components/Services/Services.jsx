@@ -1,17 +1,8 @@
 import React from "react";
-import { useHistory} from "react-router-dom";
 
 require("./_services.scss");
 function Services() {
-  const history = useHistory();
-  const handleClick = async (event) => {
-    event.preventDefault();
-  
-    
-    history.push("/devis");
-  };
- 
-  return (
+   return (
     <div className="services-container">
       <div className="card">
         <div className="container">
@@ -23,7 +14,7 @@ Nous créons pour votre entreprise un site internet simple, clair, visuel. Le bu
 Kaval Prod est spécialisée dans les sites internet pour les commerces situés dans les zones rurales. Les petits commerces de proximité, les primeurs, les vignerons, les bouchers, les magasins de prêt à porter, les maisons d’hôte… Toutes ces entreprises qui constituent le tissu économique local, et qui sont souvent mal informées des nouveaux modes de communication et de commercialisation. 
 
 Nous proposons également des formations à distance de communication numérique et au  e-commerce. 
-</h3> <button onClick={handleClick}>Devis</button>        
+</h3>        
        </div>
       </div>
     </div>

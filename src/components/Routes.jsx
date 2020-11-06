@@ -8,6 +8,8 @@ import Devis from "./pages/Devis/Devis";
 import Profil from "./pages/Profil/Profil";
 import { AuthContext } from "../App";
 import PrivateRoute from "./molecules/PrivateRoute";
+import Admin from "./pages/Admin/Admin";
+import AdminRoute from "./molecules/AdminRoute";
 
 
 export default function Routes() {
@@ -23,9 +25,14 @@ useEffect(() => {
       </Route>
       <Route path="/signin">
         <Signin />
+      </Route>  
+      <Route path="/admin">
+        <Admin />
       </Route>
-<PrivateRoute  path="/devis" component={Devis}/>
-      <PrivateRoute path="/profil"  component={Profil}/>
+      <AdminRoute path="/admin" component={Admin}/>
+<AdminRoute  path="/devis" component={Devis}/>
+      <AdminRoute path="/profil"  component={Profil}/>
+    
       <Route exact path="/">
         <Home />
       </Route>
