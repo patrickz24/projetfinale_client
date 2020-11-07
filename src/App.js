@@ -16,6 +16,7 @@ export const AuthContext = React.createContext({
 });
 const initialState = {
   isAuthenticated: false,
+  isAdmin:"",
   user: null,
   token: null,
 };

@@ -26,13 +26,13 @@ useEffect(() => {
       <Route path="/signin">
         <Signin />
       </Route>  
-      <Route path="/admin">
-        <Admin />
-      </Route>
-      <AdminRoute path="/admin" component={Admin}/>
-<AdminRoute  path="/devis" component={Devis}/>
-      <AdminRoute path="/profil"  component={Profil}/>
-    
+      {/* <Route path="/admin">
+        {state.isAdmin===false ? <Signin/> : <Admin />}
+      </Route> */}
+     
+      <PrivateRoute  path="/devis" component={Devis}/>
+      <PrivateRoute path="/profil"  component={Profil}/>
+      <AdminRoute path="/admin"  component={Admin}/>
       <Route exact path="/">
         <Home />
       </Route>

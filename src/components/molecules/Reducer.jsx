@@ -5,10 +5,11 @@ const reducer = (state, action) => {
  
       localStorage.setItem("token", action.payload.data.token);
       localStorage.setItem("user", action.payload.data.user.id);
-    
+      console.log("tuutuu",action.payload.data.user.isAdmin);
          return {
         ...state,
         isAuthenticated: true,
+        isAdmin:action.payload.data.user.isAdmin,
         token: action.payload.data.token,
         user: action.payload.config.data.user,
         
@@ -18,8 +19,10 @@ const reducer = (state, action) => {
         console.log("tuutuu",action.payload);
         return {
           ...state,
-          isAuthenticated: true,
+          isAuthenticated: true,   
+          isAdmin: action.payload.isAdmin,
           user: action.payload,
+       
         };
    
     case "LOGOUT":

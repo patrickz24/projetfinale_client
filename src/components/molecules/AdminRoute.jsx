@@ -7,12 +7,14 @@ const AdminRoute= ({component : Component, ...rest})  => {
 useEffect(() => {
   return () => {};
 }, [state]);
-console.log(state, "cest le stateeeeeeeeeeee AAAAAAAAAAAAAAAAAAAAAAAAA");
+console.log(state
+  , "cest le stateeeeeeeeeeee AAAAAAAAAAAAAAAAAAAAAAAAA");
+
 return(
   <Route
   {...rest}
-  render= {props=>
-   state.isAuthenticated  ? (<Component {...props}/>):(<Redirect
+  render= {props => 
+   state.isAdmin  ? (<Component {...props}/>):(<Redirect
     to={{
         pathname: "./signin",
         state:  'Please sign in' 
@@ -20,5 +22,5 @@ return(
     />
     )}/>
 )};
-
+  
 export default AdminRoute
