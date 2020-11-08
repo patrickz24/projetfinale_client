@@ -16,7 +16,8 @@ export const AuthContext = React.createContext({
 });
 const initialState = {
   isAuthenticated: false,
-  isAdmin:"",
+  isAdmin:null,
+  isLoading:true,
   user: null,
   token: null,
 };
@@ -39,10 +40,15 @@ export default function App() {
           type: "LOAD_USER",
           payload: result.data,
         });
+      }else {
+        dispatch({
+          type: "NO_USER", 
+        })
       }
     };
     fetchUser();
   }, []);
+  console.log(state, "Apppppppppppp statte")
   return (
     <AuthContext.Provider
       value={{

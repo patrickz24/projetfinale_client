@@ -1,17 +1,16 @@
-
 import React, { useContext, useEffect} from "react";
 
 import { Link} from "react-router-dom";
 import { AuthContext } from "../../../../App";
-require("../_navigation.scss");
+require("./_navadmin.scss");
 
-export const NavConnect = () => {
+export const NavAdmin = () => {
 
   const { state, dispatch } = useContext(AuthContext);
 
 
   // const history = useHistory();
-  useEffect(() => { 
+  useEffect(() => {
     return () => {};
   }, [state]);
  
@@ -23,54 +22,44 @@ export const NavConnect = () => {
   };
   return (
     <div>
-      <nav className="navigation">
-        <div className="navigation__button media_smartphone">
+      <nav className="navadmin">
+        <div className="navadmin__button media_smartphone">
           <Link to="/">
             <img src={`${process.env.PUBLIC_URL}/house.png`} alt="homePage" />
             <h3>Home</h3>
           </Link>
         </div>
        
-        <div className="navigation__button media_smartphone">
-          <Link to="/devis">
-            <img src={`${process.env.PUBLIC_URL}/report.png`} alt="devis" />
-            <h3>Devis</h3>
-          </Link>
-        </div>
-        <div className="navigation__button media_smartphone">
-          <Link to="/profil">
+      
+        <div className="navadmin__button media_smartphone">
+          <Link to="/admin">
             <img src={`${process.env.PUBLIC_URL}/profile.svg`} alt="profile" />
-            <h3>Profil</h3>
+            <h3>Administrateur</h3>
           </Link>
         </div> 
         
-        <div className="navigation__button media_smartphone">
+        <div className="navadmin__button media_smartphone">
           <Link onClick={logOut} to="/">
             <img src={`${process.env.PUBLIC_URL}/logout.svg`} alt="deconnexion" />
             <h3>Déconnexion</h3>
           </Link>
         </div>
-        <div className="navigation__logo media_tablet_desktop">
+        <div className="navadmin__logo media_tablet_desktop">
           <Link to="/">
             <img src= {`${process.env.PUBLIC_URL}/logo232.png`}  alt="logo" />
           </Link>
         </div>
-        <div className="navigation__buttons media_tablet_desktop">
-          <div className="navigation__buttons__test">
-            <Link to="/devis">
-              <h3>Devis</h3>
+        <div className="navadmin__buttons media_tablet_desktop">
+          <div className="navadmin__buttons__test">
+            <Link to="/admin">
+              <h3>Administrateur</h3>
             </Link>
           </div>
      
-          <div className="navigation__buttons__test">
-            <Link to ="/profil">
-              <h3>Profil</h3>
-            </Link>
-          </div> 
             
-          <div className="navigation__buttons__test">
+          <div className="navadmin__buttons__test">
             <Link  onClick={logOut} to="/">
-              <h3>Log Out</h3>
+              <h3>Déconnexion</h3>
             </Link>
           </div>
         </div>
@@ -78,4 +67,4 @@ export const NavConnect = () => {
     </div>
   );
 };
-export default NavConnect;
+export default NavAdmin;

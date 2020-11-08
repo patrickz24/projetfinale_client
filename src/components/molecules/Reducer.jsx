@@ -10,6 +10,7 @@ const reducer = (state, action) => {
         ...state,
         isAuthenticated: true,
         isAdmin:action.payload.data.user.isAdmin,
+        isLoading:false,
         token: action.payload.data.token,
         user: action.payload.config.data.user,
         
@@ -21,6 +22,7 @@ const reducer = (state, action) => {
           ...state,
           isAuthenticated: true,   
           isAdmin: action.payload.isAdmin,
+          isLoading:false,
           user: action.payload,
        
         };
@@ -30,9 +32,20 @@ const reducer = (state, action) => {
       return {
         ...state,
         isAuthenticated: false,
+        isAdmin:null,
+        isLoading:false,
         token: null,
         user: null,
       };
+      case 'NO_USER':
+			return {
+				...state,
+        isAuthenticated: false,
+        isAdmin:null,
+        isLoading:false,
+        token: null,
+        user: null,
+			};
 
 
     default:

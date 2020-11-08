@@ -14,13 +14,17 @@ return(
   <Route
   {...rest}
   render= {props=>
-    state.isAuthenticated ? (<Component {...props}/>):(<Redirect
+    !state.isLoading ? ( state.isAuthenticated ? (<Component {...props}/>):(<Redirect
     to={{
         pathname: "./signin",
         state:  'Please sign in' 
     }}
     />
-    )}/>
+    )) : (<div>Loading..</div>)
+  
+  }
+  />
+
 )};
 
 export default PrivateRoute
