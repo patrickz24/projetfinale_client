@@ -26,7 +26,7 @@ export const NavAdmin = () => {
         <div className="navadmin__button media_smartphone">
           <Link to="/">
             <img src={`${process.env.PUBLIC_URL}/house.png`} alt="homePage" />
-            <h3>Home</h3>
+            <h3>Acceuil</h3>
           </Link>
         </div>
        

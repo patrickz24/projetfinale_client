@@ -1,7 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import {Redirect, Route} from  "react-router-dom";
 import { AuthContext } from '../../App';
-// import Admin from '../pages/Admin/Admin';
+import IsLoading from '../pages/isLoading/IsLoading';
+
 
 const PrivateRoute= ({component : Component, ...rest})  => {
   const {state}= useContext(AuthContext);
@@ -20,7 +21,7 @@ return(
         state:  'Please sign in' 
     }}
     />
-    )) : (<div>Loading..</div>)
+    )) : (<IsLoading/>)
   
   }
   />

@@ -27,7 +27,7 @@ export const NavConnect = () => {
         <div className="navigation__button media_smartphone">
           <Link to="/">
             <img src={`${process.env.PUBLIC_URL}/house.png`} alt="homePage" />
-            <h3>Home</h3>
+            <h3>Acceuil</h3>
           </Link>
         </div>
        
@@ -70,7 +70,7 @@ export const NavConnect = () => {
             
           <div className="navigation__buttons__test">
             <Link  onClick={logOut} to="/">
-              <h3>Log Out</h3>
+              <h3>Déconnexion</h3>
             </Link>
           </div>
         </div>
