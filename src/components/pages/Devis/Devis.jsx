@@ -34,6 +34,7 @@ export default function Devis() {
       data: inputs,
     });
     history.push("/");
+    // location.reload();
   };
   return (
     <div className="devis-container">
@@ -51,6 +52,7 @@ export default function Devis() {
                 name="field"
                 id="field"
                 placeholder="Domaine"
+                required
               />
             </label>
 
@@ -62,6 +64,7 @@ export default function Devis() {
                 name="city"
                 id="city"
                 placeholder="Ville"
+                required
               />
             </label>
 
@@ -73,6 +76,7 @@ export default function Devis() {
                 name="description"
                 id="description"
                 placeholder="Description"
+                required
               />
             </label>
 

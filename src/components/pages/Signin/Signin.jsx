@@ -79,6 +79,7 @@ export const Signin = () => {
                 name="email"
                 id="email"
                 placeholder="Email"
+                required
               />
             </label>
 
@@ -90,6 +91,7 @@ export const Signin = () => {
                 name="password"
                 id="password"
                 placeholder="Mot de passe"
+                required
               />
             </label>
 

@@ -52,6 +52,7 @@ export default function Contact() { const history = useHistory();
                 name="subject"
                 id="subject"
                 placeholder="SUJET"
+                required
               />
             </label>
 
@@ -65,6 +66,7 @@ export default function Contact() { const history = useHistory();
                 name="text"
                 id="text"
                 placeholder="Message"
+                required
               />
             </label>
 

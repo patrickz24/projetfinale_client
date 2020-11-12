@@ -30,6 +30,7 @@ export default function App() {
       const token = localStorage.getItem("token");
     
       if (token) {
+        try{
         const result = await Axios(`http://localhost:8060/api/user/me`, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -40,6 +41,11 @@ export default function App() {
           type: "LOAD_USER",
           payload: result.data,
         });
+      }catch(error){
+        dispatch({
+          type:"LOGOUT",
+        })
+      }
       }else {
         dispatch({
           type: "NO_USER", 

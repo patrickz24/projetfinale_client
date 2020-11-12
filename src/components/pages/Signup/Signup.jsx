@@ -76,6 +76,7 @@ export default function Signup() {
                 name="first_name"
                 id="first_name"
                 placeholder="Prénom"
+                required
               />
             </label>
 
@@ -87,6 +88,7 @@ export default function Signup() {
                 name="last_name"
                 id="last_name"
                 placeholder="Nom"
+                required
               />
             </label>
 
@@ -98,6 +100,7 @@ export default function Signup() {
                 name="email"
                 id="email"
                 placeholder="Email"
+                required
               />
             </label>
 
@@ -109,6 +112,7 @@ export default function Signup() {
                 name="password"
                 id="password"
                 placeholder="Mot de passe"
+                required
               />
             </label>
             {data.errorMessage && (

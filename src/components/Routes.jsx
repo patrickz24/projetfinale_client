@@ -10,6 +10,7 @@ import { AuthContext } from "../App";
 import PrivateRoute from "./molecules/PrivateRoute";
 import Admin from "./pages/Admin/Admin";
 import AdminRoute from "./molecules/AdminRoute";
+import PublicRoute from "./molecules/PublicRoute";
 
 
 export default function Routes() {
@@ -20,16 +21,9 @@ useEffect(() => {
 
   return (
     <Switch>
-      <Route path="/signup">
-        <Signup />
-      </Route>
-      <Route path="/signin">
-        <Signin />
-      </Route>  
-      {/* <Route path="/admin">
-        {state.isAdmin===false ? <Signin/> : <Admin />}
-      </Route> */}
      
+      <PublicRoute  path="/signup" component={Signup}/>
+      <PublicRoute  path="/signin" component={Signin}/>
       <PrivateRoute  path="/devis" component={Devis}/>
       <PrivateRoute path="/profil"  component={Profil}/>
       <AdminRoute path="/admin"  component={Admin}/>
