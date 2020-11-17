@@ -52,7 +52,7 @@ export const NavConnect = () => {
         </div>
         <div className="navigation__logo media_tablet_desktop">
           <Link to="/">
-            <img src= {`${process.env.PUBLIC_URL}/logo232.png`}  alt="logo" />
+            <img src= {`${process.env.PUBLIC_URL}/logo232.svg`}  alt="logo" />
           </Link>
         </div>
         <div className="navigation__buttons media_tablet_desktop">

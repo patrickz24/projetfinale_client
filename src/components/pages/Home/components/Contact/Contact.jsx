@@ -1,13 +1,19 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useAlert} from 'react-alert';
+
 require('./_contact.scss');
 
-export default function Contact() { const history = useHistory();
-
+export default function Contact() { 
+  const history = useHistory();
+  const alert = useAlert();
   const [inputs, setInputs] = useState({
     subject: "",
-    text:"",
+    message:"",
+    fisrt_name:"",
+    last_name:"",
+    email:"",
      
     
   });
@@ -32,7 +38,8 @@ export default function Contact() { const history = useHistory();
       url: "http://localhost:8060/api/contact",
       data: inputs,
       
-    });
+    }) 
+alert.show('Message Envoyé!');
     history.push("/");
   };
   
@@ -44,6 +51,42 @@ export default function Contact() { const history = useHistory();
     <form onSubmit={handleFormSubmit}>
             <h1>Contactez-nous</h1>
 
+            <label htmlFor="first_name">
+              <input
+                type="text"
+                value={inputs.first_name}
+                onChange={handleInputChange}
+                name="first_name"
+                id="first_name"
+                placeholder="Prénom"
+                required
+              />
+            </label>
+
+            <label htmlFor="last_name">
+              <input
+                type="text"
+                value={inputs.last_name}
+                onChange={handleInputChange}
+                name="last_name"
+                id="last_name"
+                placeholder="Nom"
+                required
+              />
+            </label>
+            
+            <label htmlFor="email">
+              <input
+                type="text"
+                value={inputs.email}
+                onChange={handleInputChange}
+                name="email"
+                id="email"
+                placeholder="Email"
+                required
+              />
+            </label>
+
             <label htmlFor="subject">
               <input
                 type="text"
@@ -51,20 +94,20 @@ export default function Contact() { const history = useHistory();
                 onChange={handleInputChange}
                 name="subject"
                 id="subject"
-                placeholder="SUJET"
+                placeholder="Objet"
                 required
               />
             </label>
 
         
 
-            <label htmlFor="text">
+            <label htmlFor="message">
               <input
                 type="text"
                 value={inputs.text}
                 onChange={handleInputChange}
-                name="text"
-                id="text"
+                name="message"
+                id="messsage"
                 placeholder="Message"
                 required
               />

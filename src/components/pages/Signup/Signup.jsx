@@ -1,12 +1,15 @@
 import React from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import { useAlert} from 'react-alert';
+
+
 
 require("./_signup.scss");
 
 export default function Signup() {
   const history = useHistory();
-
+  const alert = useAlert();
   const initialState = {
     first_name: "",
     last_name: "",
@@ -44,6 +47,7 @@ export default function Signup() {
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
+          alert.show(`Vous êtes bien inscrit ${data.first_name} ${data.last_name}!`);
           history.push("/signin");
           return res;
         }

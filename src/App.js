@@ -5,11 +5,29 @@ import { BrowserRouter as Router } from "react-router-dom";
 import Header from "./components/organisms/Header/Header";
 import Routes from "./components/Routes";
 import Footer from "./components/organisms/Footer/Footer";
-
+import { transitions, positions, Provider as AlertProvider } from 'react-alert';
+import AlertTemplate from 'react-alert-template-basic';
 
 import reducer from "./components/molecules/Reducer";
 import Axios from "axios";
 require("./sass/config/_variable.scss");
+
+
+ 
+// optional configuration
+const options = {
+  // you can also just use 'bottom center'
+  position: positions.TOP_CENTER,
+  timeout: 3000,
+  offset: '30px',
+  // you can also just use 'scale'
+  transition: transitions.SCALE
+}
+ 
+
+ 
+
+
 export const AuthContext = React.createContext({
   state: "",
   dispatch: () => {},
@@ -56,6 +74,8 @@ export default function App() {
   }, []);
   console.log(state, "Apppppppppppp statte")
   return (
+
+  <AlertProvider template={AlertTemplate} {...options}>
     <AuthContext.Provider
       value={{
         state,
@@ -68,5 +88,6 @@ export default function App() {
         <Footer />
       </Router>
     </AuthContext.Provider>
+    </AlertProvider>
   );
 }

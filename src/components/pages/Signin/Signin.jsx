@@ -2,13 +2,13 @@ import React, { useContext } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../../App";
-
+import { useAlert} from 'react-alert';
 require("./_signin.scss");
 
 export const Signin = () => {
   const { dispatch } = useContext(AuthContext); 
   const history = useHistory();
-
+  const alert = useAlert();
   const initialState = {
     email: "",
     password: "",
@@ -43,6 +43,8 @@ export const Signin = () => {
       .then((res) => {
         console.log(res);
         if (res.status === 200) {
+          console.log(data);
+          alert.show(`Vous êtes bien connecté !`);
           return res;
         }
         throw res;
@@ -52,6 +54,7 @@ export const Signin = () => {
           type: "SIGNIN",
           payload: resJson,
         });
+        
         history.push("./");
       })
       .catch((error) => {

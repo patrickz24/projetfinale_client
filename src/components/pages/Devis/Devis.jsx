@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-
+import { useAlert} from 'react-alert';
 require("./_devis.scss");
 
 export default function Devis() {
   const history = useHistory();
-
+  const alert = useAlert();
   const [inputs, setInputs] = useState({
     field: "",
     city: "",
@@ -33,6 +33,7 @@ export default function Devis() {
       url: "http://localhost:8060/api/devis",
       data: inputs,
     });
+    alert.show('Votre demande de devis a bien été envoyé!');
     history.push("/");
     // location.reload();
   };
@@ -51,7 +52,7 @@ export default function Devis() {
                 onChange={handleInputChange}
                 name="field"
                 id="field"
-                placeholder="Domaine"
+                placeholder="Secteur d'activité"
                 required
               />
             </label>

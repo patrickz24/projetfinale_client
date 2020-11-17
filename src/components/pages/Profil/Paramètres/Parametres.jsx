@@ -2,6 +2,9 @@ import React, { useContext, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { AuthContext } from "../../../../App";
+
+
+require('./_parametres.scss');
 export default function Parametres() {
   const { state, dispatch } = useContext(AuthContext);
 
@@ -49,7 +52,7 @@ export default function Parametres() {
   }
 
   return (
-    <div>
+    <div className="parametres">
       <button disabled={data.isSubmitting} onClick={deleteUser}>
         {data.isSubmitting ? "Loading..." : "Supprimer mon compte"}
       </button>

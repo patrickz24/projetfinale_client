@@ -23,6 +23,7 @@ const reducer = (state, action) => {
           isAuthenticated: true,   
           isAdmin: action.payload.isAdmin,
           isLoading:false,
+          token: action.payload.token,
           user: action.payload,
        
         };

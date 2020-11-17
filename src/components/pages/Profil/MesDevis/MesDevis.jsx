@@ -31,13 +31,14 @@ export default function MesDevis() {
   
   console.log(devis);
    
-    return (
+    return ( 
+      <div className="containe">
 
-     <div className="mesdevis">
+     <div className="containe-mesdevis">
 
        {devis.map(devi=>
       
-       <div className='mesdevis-mondevis'>
+       <div className='containe-mesdevis-mondevis'>
          <h4>Numéro de devis : {devi.id}</h4>
          <h2>Domaine: {devi.field}</h2>
          <h3>Ville : {devi.city}</h3>
@@ -49,6 +50,6 @@ export default function MesDevis() {
         
         )}
           </div>
-       
+          </div>
     );
 }

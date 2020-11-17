@@ -33,7 +33,7 @@ export default function () { const styles = {
     },
     bmItemList: {
       color: '#b8b7ad',
-      padding: '3em'
+      padding: '0.1em'
     },
     bmItem: {
       display: 'flex'

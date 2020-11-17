@@ -7,7 +7,15 @@
     align-items: center;
     padding-top: 5%;
     padding-bottom: 1%;
+    position: absolute;
     background: url("https://cdn.pixabay.com/photo/2016/11/21/14/57/agriculture-1845835_960_720.jpg") no-repeat center / cover;
+    @include media(tablet) {
+        height: 80.1vh;
+        width: 83.2%;
+        margin: 0 auto;
+        margin: 5.145% 0% 0% 16.74%; // padding-top: 5%;
+        z-index: 1;
+    }
     .card {
         padding: 5%;
         width: 80%;

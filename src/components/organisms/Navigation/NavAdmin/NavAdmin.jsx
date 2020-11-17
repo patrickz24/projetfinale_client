@@ -46,7 +46,7 @@ export const NavAdmin = () => {
         </div>
         <div className="navadmin__logo media_tablet_desktop">
           <Link to="/">
-            <img src= {`${process.env.PUBLIC_URL}/logo232.png`}  alt="logo" />
+            <img src= {`${process.env.PUBLIC_URL}/logo232.svg`}  alt="logo" />
           </Link>
         </div>
         <div className="navadmin__buttons media_tablet_desktop">
