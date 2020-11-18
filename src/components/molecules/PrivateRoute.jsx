@@ -18,7 +18,7 @@ return(
   render= {props=>
     !state.isLoading ? ( state.isAuthenticated ? (<Component {...props}/>):(<Redirect onClick={alert.show('Veillez vous connecter, pour accèder à cette page!')}
     to={{
-        pathname: "./signin",
+        pathname: "./",
         state:  'Please sign in',
         
     }}

@@ -25,7 +25,9 @@ useEffect(() => {
       <PublicRoute  path="/signup" component={Signup}/>
       <PublicRoute  path="/signin" component={Signin}/>
       <PrivateRoute  path="/devis" component={Devis}/>
-      <PrivateRoute path="/profil"  component={Profil}/>
+      {/* <PrivateRoute path="/profil"  component={Profil}/> */}
+      <Route path="/profil">
+        <Profil /></Route>
       <AdminRoute path="/admin"  component={Admin}/>
       <Route exact path="/">
         <Home />
